@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane accessibleRole="BUTTON" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ToDoController">
+   <children>
+      <Label alignment="CENTER" layoutX="35.0" layoutY="24.0" prefHeight="17.0" prefWidth="530.0" text="To Do List Manager" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" underline="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <MenuBar accessibleRole="BUTTON" layoutX="207.0" layoutY="70.0" nodeOrientation="RIGHT_TO_LEFT">
+        <menus>
+            <Menu mnemonicParsing="false" text="Load">
+              <items>
+                  <MenuItem fx:id="loadAll" mnemonicParsing="false" onAction="#loadAllClicked" text="Load All Lists" />
+                <MenuItem mnemonicParsing="false" text="Select To Do Lists">
+                     <graphic>
+                        <TextField fx:id="loadSelectList" onAction="#loadSelectListClicked" />
+                     </graphic>
+                  </MenuItem>
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="View">
+            <items>
+              <MenuItem fx:id="viewAll" mnemonicParsing="false" onAction="#viewAllClicked" text="View All Lists" />
+                  <Menu mnemonicParsing="false" text="Select List">
+                    <items>
+                      <MenuItem fx:id="viewSelectListAllItems" mnemonicParsing="false" onAction="#viewSelectListAllItemsClicked" text="View All Items" />
+                        <MenuItem fx:id="viewSelectListCompletedItems" mnemonicParsing="false" onAction="#viewSelectListCompletedItemsClicked" text="View Completed Items" />
+                        <MenuItem fx:id="viewSelectListIncompletedItems" mnemonicParsing="false" onAction="#viewSelectListIncompletedClicked" text="View Incomplete Items" />
+                    </items>
+                     <graphic>
+                        <TextField fx:id="viewSelectList" />
+                     </graphic>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <Menu mnemonicParsing="false" text="Edit List">
+                    <items>
+                        <Menu mnemonicParsing="false" text="Select List">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Add Item">
+                                 <graphic>
+                                    <TextField fx:id="editListAddItem" onAction="#editListAddItemClicked" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem fx:id="editDeleteItem" mnemonicParsing="false" onAction="#editDeleteItemClicked" text="Delete Item" />
+                          <MenuItem fx:id="editDeleteList" mnemonicParsing="false" onAction="#editDeleteListClicked" text="Delete List" />
+                              <MenuItem mnemonicParsing="false" text="Edit Title">
+                                 <graphic>
+                                    <TextField fx:id="titleList" />
+                                 </graphic>
+                              </MenuItem>
+                              <Menu mnemonicParsing="false" text="Edit Item">
+                                <items>
+                                    <MenuItem fx:id="editDate" mnemonicParsing="false" onAction="#editDateClicked" text="Edit Due Date">
+                                       <graphic>
+                                          <DatePicker />
+                                       </graphic>
+                                    </MenuItem>
+                                    <CheckMenuItem mnemonicParsing="false" onAction="#completedClicked" text="Completed">
+                                       <graphic>
+                                          <CheckBox mnemonicParsing="false" text="CheckBox" />
+                                       </graphic>
+                                    </CheckMenuItem>
+                                  <MenuItem fx:id="editDescription" mnemonicParsing="false" onAction="#editDescriptionClicked" text="Edit Description">
+                                       <graphic>
+                                          <TextField fx:id="descriptionItem" />
+                                       </graphic>
+                                    </MenuItem>
+                                </items>
+                                 <graphic>
+                                    <TextField fx:id="searchItem" />
+                                 </graphic>
+                              </Menu>
+                          </items>
+                           <graphic>
+                              <TextField fx:id="editSearchList" />
+                           </graphic>
+                        </Menu>
+                    </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" text="Add List">
+                     <graphic>
+                        <TextField fx:id="editAddListTitle" onAction="#editAddListTitleClicked" />
+                     </graphic>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Store">
+            <items>
+                  <MenuItem fx:id="storeAll" mnemonicParsing="false" onAction="#storeAllClicked" text="Store All Lists" />
+              <MenuItem mnemonicParsing="false" text="Select To Do List">
+                     <graphic>
+                        <TextField fx:id="storeSingleList" onAction="#storeSingleListClicked" />
+                     </graphic>
+                  </MenuItem>
+            </items>
+          </Menu>
+        </menus>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="CLOSED_HAND" />
+         </cursor>
+      </MenuBar>
+   </children>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
